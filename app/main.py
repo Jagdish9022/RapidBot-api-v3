@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.routes import router
+from app.api.main_router import api_router
 from app.db.mysql import init_db
 import logging
 import sys
@@ -32,7 +32,7 @@ app.add_middleware(
 )
 
 # Include API routes
-app.include_router(router, prefix="/api")
+app.include_router(api_router,)
 
 @app.on_event("startup")
 async def startup_event():

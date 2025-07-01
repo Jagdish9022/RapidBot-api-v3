@@ -6,11 +6,9 @@ import logging
 import os
 from dotenv import load_dotenv
 from datetime import datetime
-import time
 from tenacity import retry, stop_after_attempt, wait_exponential
 import google.generativeai as genai
-import json
-import threading
+import threading 
 
 load_dotenv()
 
